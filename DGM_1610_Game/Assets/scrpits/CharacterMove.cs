@@ -31,18 +31,17 @@ public class CharacterMove : MonoBehaviour {
 			Jump();
 		}
 
-		
+		// This code makes the character move from side to side using the A&D keys
+		if(Input.GetKey (KeyCode.D)){
+			GetComponent<Ridgidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Ridgidbody2D>().velocity.y);
 
+		}
+		if(Input.GetKey (KeyCode.A)){
+			GetComponent<Ridgidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Ridgidbody2D>().velocity.y);
 
+		}
 
-
-
-
-
-
-
-
-
+	}
 		Public Void Jump(){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
 		}
